@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+ <link rel="shortcut icon" href="images/weatherdefoultlogo.webp" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="weather-container">
+    <h1>Weather App</h1>
+    <div class="search-container">
+      <input type="text" id="city-input" placeholder="Enter city name">
+      <button id="search-btn">Get Weather</button>
+    </div>
+    <div id="all" class="all">
+    <div id="weather-info">
+      <h2 id="city-name">City Name</h2>
+      <table>
+      <tr><td><p id="temperature">Temperature:</p></td><td><span id="temperature-value">--</span></td></tr>
+      <tr><td><p id="description">Description:</p></td><td><span id="description-value">--</span></td></tr>
+      <tr><td><p id="humidity">Humidity: </p></td><td><span id="humidity-value">--</span></td></tr>
+      <tr><td><p id="wind">Wind Speed: </p></td><td><span id="wind-value">--</span></td></tr>
+</table>
+      <!-- Weather Image -->
+      <img id="weather-image" src="images/weatherdefoult.jfif" alt="Weather Image" >
+    </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
