@@ -1,7 +1,7 @@
 {
     "name": "Weather App",
     "short_name": "Weather",
-    "description": "Check the weather conditions for any city!",
+    "description": "This system Was Developed by Andre Wanyu To Check the weather conditions for any city!",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
