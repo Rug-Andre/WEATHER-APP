@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
- <link rel="shortcut icon" href="images/weatherdefoultlogo.webp" type="image/x-icon">
-  <link rel="manifest" href="manifest.json">
+  <link rel="shortcut icon" href="images/weatherdefoultlogo.webp" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,20 +16,23 @@
       <button id="search-btn">Get Weather</button>
     </div>
     <div id="all" class="all">
-    <div id="weather-info">
-      <h2 id="city-name">City Name</h2>
-      <table>
-      <tr><td><p id="temperature">Temperature:</p></td><td><span id="temperature-value">--</span></td></tr>
-      <tr><td><p id="description">Description:</p></td><td><span id="description-value">--</span></td></tr>
-      <tr><td><p id="humidity">Humidity: </p></td><td><span id="humidity-value">--</span></td></tr>
-      <tr><td><p id="wind">Wind Speed: </p></td><td><span id="wind-value">--</span></td></tr>
-</table>
-      <!-- Weather Image -->
-      <img id="weather-image" src="images/weatherdefoult.jfif" alt="Weather Image" >
-    </div>
+      <div id="weather-info">
+        <h2 id="city-name">City Name</h2>
+        <table>
+          <tr><td><p id="temperature">Temperature:</p></td><td><span id="temperature-value">--</span></td></tr>
+          <tr><td><p id="description">Description:</p></td><td><span id="description-value">--</span></td></tr>
+          <tr><td><p id="humidity">Humidity: </p></td><td><span id="humidity-value">--</span></td></tr>
+          <tr><td><p id="wind">Wind Speed: </p></td><td><span id="wind-value">--</span></td></tr>
+        </table>
+        <!-- Weather Image -->
+        <img id="weather-image" src="images/weatherdefoult.jfif" alt="Weather Image" >
+      </div>
     </div>
   </div>
-
-  <script src="app.js"></script>
+  <footer style="margin-top: 40px; color: #bbb; font-size: 14px; text-align: center;">DESIGNED BY ANDRE WANYU</footer>
+  <div id="install-prompt" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #275da0; color: white; padding: 10px 20px; border-radius: 8px; display: none; z-index: 1000;">
+    Install Weather App? <button id="install-btn" style="background: white; color: #275da0; margin-left: 10px; padding: 5px 15px; border: none; border-radius: 5px; cursor: pointer;">Install</button>
+  </div>
+  <script src="/app.js"></script>
 </body>
 </html>
