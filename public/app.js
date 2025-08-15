@@ -1,6 +1,5 @@
 // Check if service workers are supported in the browser
 if ('serviceWorker' in navigator) {
-  // Register the service worker
   navigator.serviceWorker.register('/sw.js')
     .then((registration) => {
       console.log('Service Worker registered with scope:', registration.scope);
@@ -9,8 +8,30 @@ if ('serviceWorker' in navigator) {
       console.log('Service Worker registration failed:', error);
     });
 }
- 
-const apiKey = "4b3df61189d04f959af103341250902";// Your WeatherAPI key 
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const installPrompt = document.getElementById('install-prompt');
+  installPrompt.style.display = 'block';
+
+  document.getElementById('install-btn').addEventListener('click', () => {
+    installPrompt.style.display = 'none';
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    }
+  });
+});
+
+const apiKey = "4b3df61189d04f959af103341250902"; // Your WeatherAPI key
 
 // Display the default image on page load
 window.onload = function() {
@@ -60,8 +81,6 @@ function updateWeatherInfo(data) {
   weatherImage.src = getWeatherImage(weatherCondition);
 }
 
-
-// Function to return the image path based on the weather condition
 function getWeatherImage(condition) {
   if (condition.includes("sunny") || condition.includes("clear")) {
     return "images/sunny.jfif"; // Path to the sunny image
