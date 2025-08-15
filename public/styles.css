@@ -1,11 +1,20 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #e5e6e7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  flex-grow: 1;
 }
 
 .weather-container {
@@ -14,7 +23,8 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -25,18 +35,14 @@ h1 {
 
 .search-container {
   margin-bottom: 20px;
- 
 }
+
 #all {
   background-color: rgb(252, 255, 253);
   border-radius: 10px;
-  width: auto;
+  width: 100%;
   height: auto;
-  border:1px solid rgb(198, 225, 198);
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border: 1px solid rgb(198, 225, 198);
 }
 
 #city-input {
@@ -45,14 +51,15 @@ h1 {
   height: 35px;
   border-radius: 4px;
   margin-top: 20px;
-  border: 1px solid #ccc;
-  outline: none;
   border: 1px solid rgb(17, 210, 46);
+  outline: none;
 }
-#city-input::placeholder{
-  padding-left:20px ;
+
+#city-input::placeholder {
+  padding-left: 20px;
   color: rgb(41, 166, 41);
 }
+
 #search-btn {
   padding: 8px 15px;
   border-radius: 4px;
@@ -66,39 +73,72 @@ h1 {
   height: 45px;
   margin-right: 150px;
 }
-#search-btn:hover{
-  border: 2px solid rgb(6, 6, 147); 
+
+#search-btn:hover {
+  border: 2px solid rgb(6, 6, 147);
 }
 
 #weather-info {
   margin-top: 20px;
   place-items: center;
 }
-#city-name{
+
+#city-name {
   color: #099f22;
 }
+
 #weather-info p {
   margin: 5px 0;
   color: blue;
-
 }
-.defaultone{
+
+.defaultone {
   max-width: 50px;
   height: 50px;
   margin-top: 20px;
 }
+
 #weather-image {
   max-width: 100px;
   height: 100px;
   margin-top: 10px;
 }
+
 /* Red color styling for dynamic data */
 #temperature-value, #description-value, #humidity-value, #wind-value {
   color: rgb(38, 165, 12);
   padding-left: 20px;
 }
 
-@media(max-width:997px){
+footer {
+  margin-top: 20px;
+  color: #bbb;
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#install-prompt {
+  margin-top: 20px;
+  background: #275da0;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+}
+
+#install-prompt button {
+  background: white;
+  color: #275da0;
+  margin-left: 10px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 997px) {
   #search-btn {
     padding: 8px 15px;
     border-radius: 4px;
@@ -112,12 +152,12 @@ h1 {
     height: 45px;
     margin-right: 0px;
   }
+
   .weather-container {
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+  }
+
+  .content-wrapper {
+    max-width: 300px;
   }
 }
